@@ -1,28 +1,60 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div class="header">
+      <span class="shopCartLbl">Clothing Store</span>
+      <div class="spacer"></div>
+      <font-awesome-icon icon="fa-solid fa-cart-shopping" />
+      <div class="itemCounter">{{itemCount}}</div>
+    </div>
+    <router-view />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 
 export default {
   name: 'App',
+  data() {
+    return {
+      itemCount: 0
+    };
+  },
   components: {
-    HelloWorld
+    
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+body{
+  margin: 0;
+  padding: 0;
+}
+.header
+{
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  height: 100px;
+  background: rgb(60, 60, 60);
+  color: white;
+  font-size: 2rem;
+}
+.shopCartLbl
+{
+  margin-left: 80px;
+}
+.spacer
+{
+  width: 80%;
+}
+.itemCounter
+{
+  background: red;
+  color: white;
+  font-size: 1.2rem;
+  position: relative;
+  bottom: 20px;
+  right: 5px;
 }
 </style>
